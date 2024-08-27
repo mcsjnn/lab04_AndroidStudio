@@ -59,6 +59,16 @@ fun MainContent(name: String, modifier: Modifier = Modifier) {
                 onCheckedChange = { switchState = it }
             )
         }
+
+        // Checkbox Component
+        var checkboxState by remember { mutableStateOf(false) }
+        Row(verticalAlignment = Alignment.CenterVertically) {
+            Checkbox(
+                checked = checkboxState,
+                onCheckedChange = { checkboxState = it }
+            )
+            Text("Acepto los terminos y condiciones")
+        }
     }
 }
 
