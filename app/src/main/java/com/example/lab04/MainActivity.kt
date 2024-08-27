@@ -40,6 +40,16 @@ fun MainContent(name: String, modifier: Modifier = Modifier) {
     ) {
         Greeting(name = name)
 
+        // Slider Component
+        var sliderPosition by remember { mutableStateOf(0f) }
+        Text(text = "Slider Value: ${sliderPosition.toInt()}")
+        Slider(
+            value = sliderPosition,
+            onValueChange = { sliderPosition = it },
+            valueRange = 0f..100f,
+            modifier = Modifier.fillMaxWidth()
+        )
+
         // Switch Component
         var switchState by remember { mutableStateOf(false) }
         Row(verticalAlignment = Alignment.CenterVertically) {
